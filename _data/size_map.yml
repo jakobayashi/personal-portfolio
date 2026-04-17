@@ -1,0 +1,20 @@
+# Maps the "size" value in each project's front matter to a grid shape.
+# col_span: how many columns the tile occupies
+# row_span: how many rows the tile occupies
+# To add a new size, add a new entry and use that size value in a project file.
+
+- size: 1
+  col_span: 1
+  row_span: 1
+
+- size: 2
+  col_span: 1
+  row_span: 2
+
+- size: 3
+  col_span: 2
+  row_span: 1
+
+- size: 4
+  col_span: 2
+  row_span: 2

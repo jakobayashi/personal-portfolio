@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<script>document.body.classList.add('project-page');</script>
+
+<div class="project">
+  <div class="project-header">
+    <a class="back-link" href="{{ '/' | relative_url }}">← Back</a>
+    <h1>{{ page.title }}</h1>
+  </div>
+
+  {% for section in page.sections %}
+    <div class="project-section {% cycle '', 'reverse' %}">
+      <div class="section-media">
+        {% if section.type == 'image' %}
+          <img src="{{ section.src }}" alt="{{ section.alt | default: page.title }}">
+        {% elsif section.type == 'video' %}
+          <video controls>
+            <source src="{{ section.src }}">
+          </video>
+        {% endif %}
+      </div>
+      <div class="section-text">
+        <p>{{ section.text }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
