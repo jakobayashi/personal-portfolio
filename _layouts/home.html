@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<script>document.body.classList.add('home');</script>
+
+<main class="home-main">
+  <div class="bubble-grid">
+
+    <div class="bubble-wrapper intro-tile"
+         data-col-span="2" data-row-span="1" data-priority="10">
+      <a class="bubble intro-bubble" href="{{ '/about/' | relative_url }}">
+        <p>Hi, I'm Julian.<br>These are some of my projects.</p>
+      </a>
+    </div>
+
+    {% for project in site.projects %}
+      {% assign sz = project.size | default: 1 %}
+      {% assign size_config = site.data.size_map | where: "size", sz | first %}
+      {% assign cs = size_config.col_span | default: 1 %}
+      {% assign rs = size_config.row_span | default: 1 %}
+      <div class="bubble-wrapper"
+           data-col-span="{{ cs }}"
+           data-row-span="{{ rs }}"
+           data-priority="{{ project.priority | default: 5 }}">
+        <a class="bubble" href="{{ project.url | relative_url }}">
+          {% if project.thumbnail %}
+            <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+          {% endif %}
+          <span class="bubble-title">{{ project.title }}</span>
+        </a>
+      </div>
+    {% endfor %}
+
+  </div>
+</main>
+
+<script>
+const projectTiles = Array.from(document.querySelectorAll('.bubble-wrapper:not(.intro-tile)'));
+</script>
+<script src="{{ '/assets/js/bubbles.js' | relative_url }}"></script>

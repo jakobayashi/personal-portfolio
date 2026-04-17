@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Header & Footer ── */
+.site-header {
+  background: #fff;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-header nav a {
+  font-weight: 400;
+}
+
+.site-footer {
+  background: #fff;
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+  flex-shrink: 0;
+}
+
+/* ── Home ── */
+body.home {
+  background: #000;
+  overflow: hidden;
+}
+
+.home-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble-grid {
+  /* --cell is the side length of a 1x1 tile.
+     min() picks whichever dimension (width or height) fills first. */
+  --cell: min(calc((75vw - 50px) / 6), calc((75vh - 40px) / 5));
+  display: grid;
+  grid-template-columns: repeat(6, var(--cell));
+  grid-auto-rows: var(--cell);
+  gap: 10px;
+  width: calc(6 * var(--cell) + 50px);
+}
+
+.bubble-wrapper {
+  z-index: 0;
+}
+
+.bubble-wrapper:hover {
+  z-index: 10;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.bubble:hover {
+  transform: scale(1.15);
+}
+
+.bubble img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bubble-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.bubble:hover .bubble-title {
+  opacity: 1;
+}
+
+/* Intro tile */
+.intro-bubble {
+  background: #111;
+  cursor: pointer;
+}
+
+.intro-bubble p {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ── About page ── */
+.about {
+  flex: 1;
+  padding: 2rem;
+  color: #111;
+}
+
+.about h1 {
+  margin-bottom: 1rem;
+}
+
+/* ── Project page ── */
+body.project-page {
+  background: #000;
+}
+
+.project {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-header {
+  padding: 1rem 0.5rem 0.5rem;
+  color: #fff;
+}
+
+.project .back-link {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.project .back-link:hover {
+  color: #fff;
+}
+
+.project h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.project-section {
+  display: flex;
+  gap: 10px;
+  min-height: 300px;
+}
+
+.project-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-media {
+  flex: 3;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.section-media img,
+.section-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.section-text {
+  flex: 2;
+  border-radius: 40px;
+  background: #111;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-text p {
+  color: #ccc;
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
