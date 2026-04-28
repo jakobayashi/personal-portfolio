@@ -1,8 +1,8 @@
 (function () {
   const COLS = 6;
   const MAX_ROWS = 25;
-  const INFLUENCE_R = 1000;
-  const MAX_PUSH = 5;
+  const INFLUENCE_R = 500;
+  const MAX_PUSH = 15;
 
   // --- Placement: center-out by priority ---
 
@@ -17,22 +17,50 @@
 
   tileData.sort((a, b) => b.priority - a.priority);
 
-  const totalCells = tileData.reduce((sum, t) => sum + t.cs * t.rs, 0);
-  const estimatedRows = Math.ceil(totalCells / COLS) + 1;
-  const centerRow = (estimatedRows - 1) / 2;
   const centerCol = (COLS - 1) / 2;
 
-  const anchors = [];
-  for (let r = 0; r < MAX_ROWS; r++) {
-    for (let c = 0; c < COLS; c++) {
-      anchors.push({ r, c, dist: Math.sqrt((c - centerCol) ** 2 + (r - centerRow) ** 2) });
+  // Simulate packing in priority order to find actual grid height
+  const tempOcc = Array.from({ length: MAX_ROWS }, () => new Array(COLS).fill(false));
+  let actualRows = 0;
+  for (const t of tileData) {
+    placed: for (let r = 0; r < MAX_ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
+        if (c + t.cs > COLS) continue;
+        let fits = true;
+        outer: for (let dr = 0; dr < t.rs; dr++) {
+          for (let dc = 0; dc < t.cs; dc++) {
+            if (tempOcc[r + dr][c + dc]) { fits = false; break outer; }
+          }
+        }
+        if (fits) {
+          for (let dr = 0; dr < t.rs; dr++)
+            for (let dc = 0; dc < t.cs; dc++)
+              tempOcc[r + dr][c + dc] = true;
+          actualRows = Math.max(actualRows, r + t.rs);
+          break placed;
+        }
+      }
     }
   }
-  anchors.sort((a, b) => a.dist - b.dist);
+  const centerRow = (actualRows - 1) / 2;
+
+  // All anchor positions — sorted per tile using tile center, not top-left
+  const allAnchors = [];
+  for (let r = 0; r < MAX_ROWS; r++)
+    for (let c = 0; c < COLS; c++)
+      allAnchors.push({ r, c });
 
   const occupied = Array.from({ length: MAX_ROWS }, () => new Array(COLS).fill(false));
 
   tileData.forEach(t => {
+    const offC = (t.cs - 1) / 2;
+    const offR = (t.rs - 1) / 2;
+    const anchors = allAnchors.slice().sort((a, b) => {
+      const da = (a.c + offC - centerCol) ** 2 + (a.r + offR - centerRow) ** 2;
+      const db = (b.c + offC - centerCol) ** 2 + (b.r + offR - centerRow) ** 2;
+      return da - db;
+    });
+
     for (const { r, c } of anchors) {
       if (c + t.cs > COLS) continue;
       let fits = true;

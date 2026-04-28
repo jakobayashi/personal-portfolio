@@ -1,202 +1,309 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { height: 100%; }
 
 body {
-  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  background: #fafaf7;
+  color: #1a1a1a;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* ── Header & Footer ── */
+/* ── Site Header ── */
 .site-header {
-  background: #fff;
-  padding: 0.75rem 1.5rem;
-  border-bottom: 1px solid #eee;
-  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 20px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.site-header a {
-  color: #111;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.site-header nav a {
-  font-weight: 400;
-}
-
-.site-footer {
-  background: #fff;
-  padding: 0.75rem 1.5rem;
-  border-top: 1px solid #eee;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #888;
+  background: rgba(250, 250, 247, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /*border-bottom: 1px solid rgba(0, 0, 0, 0.06);*/
   flex-shrink: 0;
+}
+
+.site-title {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #5c5c5c;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: #1a1a1a;
 }
 
 /* ── Home ── */
 body.home {
-  background: #000;
+  height: 100vh;
   overflow: hidden;
+}
+
+body.home .site-header {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
 }
 
 .home-main {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 0;
+  padding: 0 32px 12px;
 }
 
-.bubble-grid {
-  /* --cell is the side length of a 1x1 tile.
-     min() picks whichever dimension (width or height) fills first. */
-  --cell: min(calc((75vw - 50px) / 6), calc((75vh - 40px) / 5));
+.bento-grid {
   display: grid;
-  grid-template-columns: repeat(6, var(--cell));
-  grid-auto-rows: var(--cell);
-  gap: 10px;
-  width: calc(6 * var(--cell) + 50px);
-}
-
-.bubble-wrapper {
-  z-index: 0;
-}
-
-.bubble-wrapper:hover {
-  z-index: 10;
-}
-
-.bubble {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: repeat(36, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 8px;
   width: 100%;
   height: 100%;
-  border-radius: 40px;
-  overflow: hidden;
+}
+
+/* Tiles hidden until JS assigns grid areas to prevent flash */
+.bento-tile {
+  visibility: hidden;
   position: relative;
+  border-radius: 25px;
+  overflow: hidden;
   text-decoration: none;
-  transition: transform 0.2s ease;
+  cursor: pointer;
+  background: #fafaf7;
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.32s cubic-bezier(0.2, 0.7, 0.3, 1),
+              box-shadow 0.32s ease;
+  will-change: transform;
 }
 
-.bubble:hover {
-  transform: scale(1.15);
+.bento-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18), 0 4px 8px rgba(0,0,0,0.08);
 }
 
-.bubble img {
+.bento-tile img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.bubble-title {
+.tile-overlay {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-  padding: 0.75rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0) 70%);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
 }
 
-.bubble:hover .bubble-title {
+.bento-tile:hover .tile-overlay {
   opacity: 1;
 }
 
-/* Intro tile */
-.intro-bubble {
-  background: #111;
-  cursor: pointer;
+.tile-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px 22px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.26s ease, transform 0.26s cubic-bezier(0.2, 0.7, 0.3, 1);
+  pointer-events: none;
 }
 
-.intro-bubble p {
+.bento-tile:hover .tile-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tile-title {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: clamp(11px, 1.1vw, 18px);
+  font-weight: 500;
   color: #fff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.4;
-  text-align: center;
-  padding: 1rem;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.tile-meta {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: clamp(8px, 0.6vw, 11px);
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* Accent ring appears on hover */
+.tile-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  box-shadow: inset 0 0 0 0 transparent;
+  transition: box-shadow 0.22s ease;
+  pointer-events: none;
+}
+
+.bento-tile:hover .tile-ring {
+  box-shadow: inset 0 0 0 0px #000000;
+}
+
+.home-footer {
+  flex-shrink: 0;
+  padding: 10px 32px 14px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10px;
+  color: #888;
+  letter-spacing: 1px;
 }
 
 /* ── About page ── */
 .about {
   flex: 1;
-  padding: 2rem;
-  color: #111;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 64px 40px 80px;
 }
 
 .about h1 {
-  margin-bottom: 1rem;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin: 0 0 28px;
+}
+
+.about p {
+  color: #3a3a3a;
+  line-height: 1.75;
+  font-size: 17px;
 }
 
 /* ── Project page ── */
 body.project-page {
-  background: #000;
+  background: #fafaf7;
 }
 
 .project {
   flex: 1;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 10px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 48px 40px 96px;
 }
 
-.project-header {
-  padding: 1rem 0.5rem 0.5rem;
-  color: #fff;
+.project-back {
+  margin-bottom: 52px;
 }
 
-.project .back-link {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  color: #aaa;
+.back-link {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  color: #5c5c5c;
+  letter-spacing: 1px;
   text-decoration: none;
-  font-size: 0.9rem;
+  transition: color 0.15s ease;
 }
 
-.project .back-link:hover {
-  color: #fff;
+.back-link:hover {
+  color: #1a1a1a;
 }
 
-.project h1 {
-  font-size: 2rem;
-  font-weight: 600;
+.project-meta {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: #5c5c5c;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-size: clamp(28px, 4vw, 60px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -1.2px;
+  margin: 0 0 24px;
+  max-width: 840px;
+}
+
+.project-summary {
+  font-size: 18px;
+  color: #3a3a3a;
+  line-height: 1.65;
+  max-width: 660px;
+  margin: 0 0 52px;
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 72px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Project Sections ── */
+.project-body {
+  max-width: 900px;
 }
 
 .project-section {
-  display: flex;
-  gap: 10px;
-  min-height: 300px;
+  margin-bottom: 72px;
 }
 
-.project-section.reverse {
-  flex-direction: row-reverse;
+.section-title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  margin: 0 0 14px;
+}
+
+.section-text {
+  color: #3a3a3a;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 28px;
+  max-width: 680px;
 }
 
 .section-media {
-  flex: 3;
-  border-radius: 40px;
-  overflow: hidden;
+  display: grid;
+  gap: 10px;
 }
 
 .section-media img,
@@ -205,19 +312,23 @@ body.project-page {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 12px;
+  min-height: 0;
 }
 
-.section-text {
-  flex: 2;
-  border-radius: 40px;
-  background: #111;
-  padding: 2.5rem;
-  display: flex;
-  align-items: center;
+.tiling-single    { height: 500px; }
+.tiling-vertical  { grid-template-rows: 1fr 1fr; height: 560px; }
+.tiling-horizontal{ grid-template-columns: 1fr 1fr; height: 360px; }
+.tiling-quadrant  { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; height: 520px; }
+.tiling-triple    { grid-template-columns: 1fr 1fr 1fr; height: 360px; }
+
+.tiling-side {
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  height: 500px;
 }
 
-.section-text p {
-  color: #ccc;
-  line-height: 1.75;
-  font-size: 0.95rem;
+.tiling-side img:nth-child(3) {
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
