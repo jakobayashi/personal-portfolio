@@ -3,29 +3,61 @@ layout: default
 ---
 <script>document.body.classList.add('project-page');</script>
 
-<div class="project">
-  <div class="project-header">
-    <a class="back-link" href="{{ '/' | relative_url }}">← Back</a>
-    <h1>{{ page.title }}</h1>
+<article class="project">
+  
+  <!-- 
+  <div class="project-back">
+    <a href="{{ '/' | relative_url }}" class="back-link">← Projects</a>
+  </div>
+  -->
+
+  <header class="project-hero">
+    {% if page.tag or page.year %}
+      <div class="project-meta">
+        {%- if page.tag %}{{ page.tag }}{% endif -%}
+        {%- if page.year and page.tag %} | {% endif -%}
+        {%- if page.year %}{{ page.year }}{% endif -%}
+      </div>
+    {% endif %}
+    <h1 class="project-title">{{ page.title }}</h1>
+    {% if page.summary %}
+      <p class="project-summary">{{ page.summary }}</p>
+    {% endif %}
+  </header>
+
+  {% if page.thumbnail %}
+    <div class="project-thumbnail">
+      <img src="{{ page.thumbnail }}" alt="{{ page.title }}">
+    </div>
+  {% endif %}
+
+  <div class="project-body">
+    {% for section in page.sections %}
+      <section class="project-section">
+        {% if section.title %}
+          <h2 class="section-title">{{ section.title }}</h2>
+        {% endif %}
+        {% if section.text %}
+          <p class="section-text">{{ section.text }}</p>
+        {% endif %}
+        {% if section.type == 'image' or section.type == 'video' %}
+          <div class="section-media tiling-{{ section.tiling | default: 'single' }}">
+            {% if section.type == 'video' %}
+              <video controls>
+                <source src="{{ section.src }}">
+              </video>
+            {% else %}
+              {% for src in section.srcs %}
+                <img src="{{ src }}" alt="{{ section.title | default: page.title }}">
+              {% endfor %}
+              {% if section.src %}
+                <img src="{{ section.src }}" alt="{{ section.title | default: page.title }}">
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endif %}
+      </section>
+    {% endfor %}
   </div>
 
-  {% for section in page.sections %}
-    <div class="project-section {% cycle '', 'reverse' %}">
-      <div class="section-media tiling-{{ section.tiling | default: 'single' }}">
-        {% if section.type == 'video' %}
-          <video controls>
-            <source src="{{ section.src }}">
-          </video>
-        {% else %}
-          {% for src in section.srcs %}
-            <img src="{{ src }}" alt="{{ section.title | default: page.title }}">
-          {% endfor %}
-        {% endif %}
-      </div>
-      <div class="section-text">
-        {% if section.title %}<h2>{{ section.title }}</h2>{% endif %}
-        <p>{{ section.text }}</p>
-      </div>
-    </div>
-  {% endfor %}
-</div>
+</article>

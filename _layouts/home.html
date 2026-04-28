@@ -4,37 +4,33 @@ layout: default
 <script>document.body.classList.add('home');</script>
 
 <main class="home-main">
-  <div class="bubble-grid">
-
-    <div class="bubble-wrapper intro-tile"
-         data-col-span="2" data-row-span="1" data-priority="10">
-      <a class="bubble intro-bubble" href="{{ '/about/' | relative_url }}">
-        <p>Hi, I'm Julian.<br>These are some of my projects.</p>
-      </a>
-    </div>
-
+  <div id="bento-grid" class="bento-grid">
     {% for project in site.projects %}
-      {% assign sz = project.size | default: 1 %}
-      {% assign size_config = site.data.size_map | where: "size", sz | first %}
-      {% assign cs = size_config.col_span | default: 1 %}
-      {% assign rs = size_config.row_span | default: 1 %}
-      <div class="bubble-wrapper"
-           data-col-span="{{ cs }}"
-           data-row-span="{{ rs }}"
-           data-priority="{{ project.priority | default: 5 }}">
-        <a class="bubble" href="{{ project.url | relative_url }}">
-          {% if project.thumbnail %}
-            <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+      <a class="bento-tile"
+         href="{{ project.url | relative_url }}"
+         data-size="{{ project.size | default: 1 }}">
+        {% if project.thumbnail %}
+          <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+        {% endif %}
+        <div class="tile-overlay"></div>
+        <div class="tile-info">
+          <div class="tile-title">{{ project.title }}</div>
+          {% if project.year or project.tag %}
+            <div class="tile-meta">
+              {%- if project.tag %}{{ project.tag }}{% endif -%}
+              {%- if project.year and project.tag %} | {% endif -%}
+              {%- if project.year %}{{ project.year }}{% endif -%}
+            </div>
           {% endif %}
-          <span class="bubble-title">{{ project.title }}</span>
-        </a>
-      </div>
+        </div>
+        <div class="tile-ring"></div>
+      </a>
     {% endfor %}
-
   </div>
 </main>
 
-<script>
-const projectTiles = Array.from(document.querySelectorAll('.bubble-wrapper:not(.intro-tile)'));
-</script>
-<script src="{{ '/assets/js/bubbles.js' | relative_url }}"></script>
+<footer class="home-footer">
+  <span>{{ site.projects.size }} Projects</span>
+</footer>
+
+<script src="{{ '/assets/js/bento.js' | relative_url }}"></script>

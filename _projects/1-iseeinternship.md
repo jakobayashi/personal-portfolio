@@ -1,7 +1,8 @@
 ---
 title: "ISEE.AI - Mechanical Engineering Intern"
 size: 4
-priority: 10
+tag: "Internship"
+year: "2023"
 thumbnail: "/assets/photos/isee-header.jpg"
 sections:
   - type: image

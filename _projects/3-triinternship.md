@@ -1,7 +1,8 @@
 ---
 title: "Toyota Research Institute - Robotics Engineering Intern"
 size: 4
-priority: 10
+tag: "Internship"
+year: "2025"
 thumbnail: "/assets/photos/tri-header.jpg"
 sections:
   - type: image

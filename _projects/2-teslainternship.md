@@ -1,7 +1,8 @@
 ---
 title: "Tesla - Mechanical Engineering Intern"
 size: 4
-priority: 10
+tag: "Internship"
+year: "2024"
 thumbnail: "/assets/photos/tesla-header.jpg"
 sections:
   - type: image
