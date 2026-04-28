@@ -8,10 +8,12 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-    <nav>
-      <a href="{{ '/about/' | relative_url }}">About</a>
-    </nav>
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+      <nav>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+      </nav>
+    </div>
   </header>
   {{ content }}
   <footer class="site-footer">

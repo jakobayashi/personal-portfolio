@@ -1,7 +1,7 @@
 ---
 title: "Project Seven"
 size: 1
-priority: 1
+priority: 4
 thumbnail: "https://picsum.photos/seed/proj7/400/400"
 sections:
   - type: image

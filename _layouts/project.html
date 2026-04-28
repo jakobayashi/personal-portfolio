@@ -11,16 +11,19 @@ layout: default
 
   {% for section in page.sections %}
     <div class="project-section {% cycle '', 'reverse' %}">
-      <div class="section-media">
-        {% if section.type == 'image' %}
-          <img src="{{ section.src }}" alt="{{ section.alt | default: page.title }}">
-        {% elsif section.type == 'video' %}
+      <div class="section-media tiling-{{ section.tiling | default: 'single' }}">
+        {% if section.type == 'video' %}
           <video controls>
             <source src="{{ section.src }}">
           </video>
+        {% else %}
+          {% for src in section.srcs %}
+            <img src="{{ src }}" alt="{{ section.title | default: page.title }}">
+          {% endfor %}
         {% endif %}
       </div>
       <div class="section-text">
+        {% if section.title %}<h2>{{ section.title }}</h2>{% endif %}
         <p>{{ section.text }}</p>
       </div>
     </div>
