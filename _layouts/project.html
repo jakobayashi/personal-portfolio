@@ -4,19 +4,13 @@ layout: default
 <script>document.body.classList.add('project-page');</script>
 
 <article class="project">
-  
-  <!-- 
-  <div class="project-back">
-    <a href="{{ '/' | relative_url }}" class="back-link">← Projects</a>
-  </div>
-  -->
 
   <header class="project-hero">
-    {% if page.tag or page.year %}
+    {% if page.year or page.tag %}
       <div class="project-meta">
-        {%- if page.tag %}{{ page.tag }}{% endif -%}
-        {%- if page.year and page.tag %} | {% endif -%}
         {%- if page.year %}{{ page.year }}{% endif -%}
+        {%- if page.year and page.tag %} · {% endif -%}
+        {%- if page.tag %}{{ page.tag }}{% endif -%}
       </div>
     {% endif %}
     <h1 class="project-title">{{ page.title }}</h1>
@@ -31,33 +25,81 @@ layout: default
     </div>
   {% endif %}
 
-  <div class="project-body">
-    {% for section in page.sections %}
-      <section class="project-section">
-        {% if section.title %}
-          <h2 class="section-title">{{ section.title }}</h2>
-        {% endif %}
-        {% if section.text %}
-          <p class="section-text">{{ section.text }}</p>
-        {% endif %}
-        {% if section.type == 'image' or section.type == 'video' %}
-          <div class="section-media tiling-{{ section.tiling | default: 'single' }}">
-            {% if section.type == 'video' %}
-              <video controls>
-                <source src="{{ section.src }}">
-              </video>
-            {% else %}
-              {% for src in section.srcs %}
-                <img src="{{ src }}" alt="{{ section.title | default: page.title }}">
-              {% endfor %}
-              {% if section.src %}
-                <img src="{{ section.src }}" alt="{{ section.title | default: page.title }}">
-              {% endif %}
-            {% endif %}
+  {% assign has_sidebar = false %}
+  {% if page.role or page.year or page.skills or page.tools or page.links %}
+    {% assign has_sidebar = true %}
+  {% endif %}
+
+  <div class="project-columns{% unless has_sidebar %} project-columns--solo{% endunless %}">
+
+    {% if has_sidebar %}
+    <aside class="project-sidebar">
+      {% if page.role %}
+        <div class="sidebar-item">
+          <div class="sidebar-label">Role</div>
+          <div class="sidebar-value">{{ page.role }}</div>
+        </div>
+      {% endif %}
+      {% if page.year %}
+        <div class="sidebar-item">
+          <div class="sidebar-label">Year</div>
+          <div class="sidebar-value">{{ page.year }}</div>
+        </div>
+      {% endif %}
+      {% if page.skills %}
+        <div class="sidebar-item">
+          <div class="sidebar-label">Skills</div>
+          <div class="sidebar-value">{{ page.skills }}</div>
+        </div>
+      {% endif %}
+      {% if page.tools %}
+        <div class="sidebar-item">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-value">{{ page.tools }}</div>
+        </div>
+      {% endif %}
+      {% if page.links %}
+        <div class="sidebar-item">
+          <div class="sidebar-label">Links</div>
+          <div class="sidebar-value">
+            {% for link in page.links %}
+              <a href="{{ link.url }}" class="sidebar-link" target="_blank" rel="noopener">{{ link.label }}</a>{% unless forloop.last %}<br>{% endunless %}
+            {% endfor %}
           </div>
-        {% endif %}
-      </section>
-    {% endfor %}
+        </div>
+      {% endif %}
+    </aside>
+    {% endif %}
+
+    <div class="project-body">
+      {% for section in page.sections %}
+        <section class="project-section">
+          {% if section.title %}
+            <h2 class="section-title">{{ section.title }}</h2>
+          {% endif %}
+          {% if section.text %}
+            <p class="section-text">{{ section.text }}</p>
+          {% endif %}
+          {% if section.type == 'image' or section.type == 'video' %}
+            <div class="section-media tiling-{{ section.tiling | default: 'single' }}">
+              {% if section.type == 'video' %}
+                <video controls>
+                  <source src="{{ section.src }}">
+                </video>
+              {% else %}
+                {% for src in section.srcs %}
+                  <img src="{{ src }}" alt="{{ section.title | default: page.title }}">
+                {% endfor %}
+                {% if section.src %}
+                  <img src="{{ section.src }}" alt="{{ section.title | default: page.title }}">
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endif %}
+        </section>
+      {% endfor %}
+    </div>
+
   </div>
 
 </article>

@@ -3,11 +3,14 @@ title: "FIRST Robotics Competition"
 size: 1
 tag: "Mechanical"
 year: "2020"
-thumbnail: "/assets/photos/firstroboticscompetition-header.jpg"
+role:
+tools:
+skills: "CAD, CAM, CNC Milling, DFMA, FDM 3D Printing, Soldering"
+thumbnail: "/assets/photos/firstroboticscompetition/header.jpg"
 sections:
   - type: image
     srcs:
-      - "/assets/photos/firstroboticscompetition-header.jpg"
+      - "/assets/photos/firstroboticscompetition/header.jpg"
     tiling: single
     title: "WIP"
     text: ""

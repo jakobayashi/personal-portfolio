@@ -1,13 +1,19 @@
 ---
-title: "Toyota Research Institute - Robotics Engineering Intern"
+title: "Toyota Research Institute"
 size: 4
 tag: "Internship"
 year: "2025"
-thumbnail: "/assets/photos/tri-header.jpg"
+role: "Robotics Engineering Intern"
+tools: "Onshape, KiCad, Python, C++"
+skills: "CAD, ECAD, GD&T, FDM 3D Printing, CNC Milling DFM, Hot Air Reflow, Soldering, PCB Turnkey Procurement, 2D Engineering Drawings"
+links:
+  - label: "website"
+    url: "https://www.tri.global/"
+thumbnail: "/assets/photos/triinternship/header.jpg"
 sections:
   - type: image
     srcs:
-      - "/assets/photos/tri-one.jpg"
+      - "/assets/photos/triinternship/one.jpg"
     tiling: single
     title: "WIP"
     text: ""
