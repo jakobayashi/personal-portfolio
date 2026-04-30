@@ -187,7 +187,6 @@ body.home .site-header {
   letter-spacing: 1px;
 }
 
-
 /* ── About page ── */
 .about {
   flex: 1;
@@ -224,6 +223,7 @@ body.home .site-header {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   padding: 5px 12px;
+  cursor: pointer;
 }
 
 /* ── Project page ── */
@@ -348,7 +348,7 @@ body.project-page {
 .project-body {}
 
 .project-section {
-  margin-bottom: 72px;
+  margin-bottom: 16px;
 }
 
 .section-title {

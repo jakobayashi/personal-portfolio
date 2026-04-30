@@ -58,12 +58,18 @@ layout: default
           <div class="sidebar-value">{{ page.tools }}</div>
         </div>
       {% endif %}
-      {% if page.links %}
+      {% assign has_links = false %}
+      {% for link in page.links %}
+        {% if link.label %}{% assign has_links = true %}{% endif %}
+      {% endfor %}
+      {% if has_links %}
         <div class="sidebar-item">
           <div class="sidebar-label">Links</div>
           <div class="sidebar-value">
             {% for link in page.links %}
-              <a href="{{ link.url }}" class="sidebar-link" target="_blank" rel="noopener">{{ link.label }}</a>{% unless forloop.last %}<br>{% endunless %}
+              {% if link.label %}
+                <a href="{{ link.url }}" class="sidebar-link" target="_blank" rel="noopener">{{ link.label }}</a>{% unless forloop.last %}<br>{% endunless %}
+              {% endif %}
             {% endfor %}
           </div>
         </div>

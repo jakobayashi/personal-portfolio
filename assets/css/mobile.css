@@ -1,0 +1,64 @@
+@media (max-width: 640px) {
+  body.home {
+    height: auto;
+    overflow: auto;
+  }
+
+  body.home .site-header {
+    background: rgba(250, 250, 247, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .home-main {
+    padding: 0 12px;
+  }
+
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .bento-tile {
+    height: 260px;
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .tile-overlay,
+  .tile-info,
+  .tile-ring {
+    display: none;
+  }
+
+  .project-thumbnail {
+    height: 250px;
+  }
+
+  .project {
+    padding: 0 16px;
+  }
+
+  .project-columns {
+    display: block;
+  }
+
+  .project-sidebar {
+    display: none;
+  }
+
+  .project-thumbnail {
+    display: none;
+  }
+
+  .tiling-single,
+  .tiling-vertical,
+  .tiling-horizontal,
+  .tiling-quadrant,
+  .tiling-triple,
+  .tiling-side {
+    height: 250px;
+  }
+}

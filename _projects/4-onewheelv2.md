@@ -6,6 +6,9 @@ year: "2025"
 role:
 tools: "SOLIDWORKS, HSMWorks, C++"
 skills: "CAD, CAM, CNC Milling, CNC Turning, CNC Milling DFM, GD&T, DFMA, FDM 3D Printing, Soldering, 2D Engineering Drawings"
+links:
+  - label: "design files"
+    url: "https://github.com/jakobayashi/onewheel"
 thumbnail: "/assets/photos/onewheelv2/header.jpeg"
 sections:
   - type: image

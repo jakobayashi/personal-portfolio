@@ -6,6 +6,9 @@ year: "2022"
 role:
 tools:
 skills: "CAD, FDM 3D Printing, Soldering, Spot Welding"
+links:
+  - label:
+    url:
 thumbnail: "/assets/photos/batterybank/header.jpg"
 sections:
   - type: image
