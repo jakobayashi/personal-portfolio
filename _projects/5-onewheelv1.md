@@ -6,6 +6,9 @@ year: "2022"
 role:
 tools: "SOLIDWORKS"
 skills: "CAD, FDM 3D Printing, Soldering, Spot Welding"
+links:
+  - label:
+    url:
 thumbnail: "/assets/photos/onewheelv1/header.jpg"
 sections:
   - type: image

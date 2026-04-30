@@ -6,6 +6,9 @@ year: "2021"
 role:
 tools: "SOLIDWORKS, HSMWorks"
 skills: "CAD, CAM, CNC Milling, FEA, Soldering, FDM 3D Printing"
+links:
+  - label:
+    url:
 thumbnail: "/assets/photos/electricbike/header.png"
 sections:
   - type: image

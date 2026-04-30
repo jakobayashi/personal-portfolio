@@ -6,6 +6,9 @@ year: "2024"
 role:
 tools:
 skills: "CAD, FDM 3D Printing, Soldering"
+links:
+  - label:
+    url:
 thumbnail: "/assets/photos/translationaldriftv2/header.jpg"
 sections:
   - type: image

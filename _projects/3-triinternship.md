@@ -9,6 +9,8 @@ skills: "CAD, ECAD, GD&T, FDM 3D Printing, CNC Milling DFM, Hot Air Reflow, Sold
 links:
   - label: "website"
     url: "https://www.tri.global/"
+  - label: "promotional video"
+    url: "https://www.youtube.com/watch?v=SEIukShccic"
 thumbnail: "/assets/photos/triinternship/header.jpg"
 sections:
   - type: image

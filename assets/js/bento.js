@@ -102,7 +102,15 @@
   });
 
   items.sort((a, b) => b.weight - a.weight);
-  items.forEach((it, i) => { it.order = i; });
+  items.forEach((it, i) => {
+    it.order = i;
+    it.tile.style.order = i;
+  });
+
+  if (window.innerWidth <= 640) {
+    items.forEach(it => { it.tile.style.visibility = 'visible'; });
+    return;
+  }
 
   const out = new Array(items.length);
   squarify(items, { x: 0, y: 0, w: COLS, h: ROWS }, out);
