@@ -18,38 +18,38 @@ links:
   - label:
     url:
 thumbnail:
-  - srcs: "/assets/photos/electricbike/header.png"
+  - srcs: "/assets/media/electricbike/header.png"
     adjustments: [-0.5, 2.7]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/electricbike/battery1.jpg"
-      - "/assets/photos/electricbike/battery2.jpg"
+      - "/assets/media/electricbike/battery1.jpg"
+      - "/assets/media/electricbike/battery2.jpg"
     tiling: horizontal
     title: "Custom LiFePO4 Battery Pack"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/electricbike/motormount1.jpg"
-      - "/assets/photos/electricbike/motormount2.jpg"
+      - "/assets/media/electricbike/motormount1.jpg"
+      - "/assets/media/electricbike/motormount2.jpg"
     tiling: horizontal
     title: "Motor Mount"
     text: ""
 
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/electricbike/billet1.jpg"
-      - "/assets/photos/electricbike/billet2.jpg"
-      - "/assets/photos/electricbike/pulley1.jpg"
-      - "/assets/photos/electricbike/pulley2.jpg"
+      - "/assets/media/electricbike/billet1.jpg"
+      - "/assets/media/electricbike/billet2.jpg"
+      - "/assets/media/electricbike/pulley1.jpg"
+      - "/assets/media/electricbike/pulley2.jpg"
     tiling: quadrant
     title: "Motor Mount"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/electricbike/final.jpg"
+      - "/assets/media/electricbike/final.jpg"
     tiling: single
     title: "Final Product"
     text: ""

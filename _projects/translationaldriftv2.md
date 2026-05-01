@@ -13,27 +13,27 @@ links:
   - label:
     url:
 thumbnail:
-  - srcs: "/assets/photos/translationaldriftv2/header.jpg"
+  - srcs: "/assets/media/translationaldriftv2/header.jpg"
     adjustments: [-0.8, 0.8]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/translationaldriftv2/cadleft.jpg"
-      - "/assets/photos/translationaldriftv2/cadright.jpg"
+      - "/assets/media/translationaldriftv2/cadleft.jpg"
+      - "/assets/media/translationaldriftv2/cadright.jpg"
     tiling: horizontal
     title: "CAD"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/translationaldriftv2/electronics.jpg"
+      - "/assets/media/translationaldriftv2/electronics.jpg"
     tiling: single
     title: "Assembly & Electronics"
     text: ""
 
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/translationaldriftv2/competition.jpg"
+      - "/assets/media/translationaldriftv2/competition.jpg"
     tiling: single
     title: "Competition"
     text: ""

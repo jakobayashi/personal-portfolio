@@ -16,27 +16,27 @@ links:
   - label: "website"
     url: "https://www.palyrobotics.com/"
 thumbnail:
-  - srcs: "/assets/photos/firstroboticscompetition/header.jpg"
+  - srcs: "/assets/media/firstroboticscompetition/header.jpg"
     adjustments: [6.8, -3.9]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/firstroboticscompetition/robot1.png"
+      - "/assets/media/firstroboticscompetition/robot1.png"
     tiling: single
     title: "2022 Rapid React Robot"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/firstroboticscompetition/robot2.jpg"
+      - "/assets/media/firstroboticscompetition/robot2.jpg"
     tiling: single
     title: "2020 Infinite Recharge Robot"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/firstroboticscompetition/climber.png"
-      - "/assets/photos/firstroboticscompetition/shooter.png"
+      - "/assets/media/firstroboticscompetition/climber.png"
+      - "/assets/media/firstroboticscompetition/shooter.png"
     tiling: horizontal
     title: "Design Team Member"
     text: ""

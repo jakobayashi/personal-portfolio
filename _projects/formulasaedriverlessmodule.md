@@ -18,40 +18,40 @@ links:
   - label: "project report"
     url: "<WIP>"
 thumbnail:
-  - srcs: "/assets/photos/formulasaedriverlessmodule/header.png"
+  - srcs: "/assets/media/formulasaedriverlessmodule/header.png"
     adjustments: [4.9, -1.4]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/formulasaedriverlessmodule/isolated.png"
+      - "/assets/media/formulasaedriverlessmodule/isolated.png"
     tiling: single
     title: "Driverless Module"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/formulasaedriverlessmodule/brakes.png"
+      - "/assets/media/formulasaedriverlessmodule/brakes.png"
     tiling: single
     title: "Emergency Brake Module"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/formulasaedriverlessmodule/sensors.png"
+      - "/assets/media/formulasaedriverlessmodule/sensors.png"
     tiling: single
     title: "Perception Sensors and Compute"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/formulasaedriverlessmodule/power.png"
+      - "/assets/media/formulasaedriverlessmodule/power.png"
     tiling: single
     title: "Power Segment"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/formulasaedriverlessmodule/frame.jpeg"
+      - "/assets/media/formulasaedriverlessmodule/frame.jpeg"
     tiling: single
     title: "Assembled Frame"
     text: ""
