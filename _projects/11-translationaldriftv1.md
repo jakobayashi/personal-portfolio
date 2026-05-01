@@ -5,7 +5,10 @@ tag: "Robotics"
 year: "2023"
 role:
 tools:
-skills: "CAD, FDM 3D Printing, Soldering"
+skills:
+  - "CAD"
+  - "FDM 3D Printing"
+  - "Soldering"
 links:
   - label:
     url:

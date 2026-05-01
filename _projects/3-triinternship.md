@@ -4,8 +4,21 @@ size: 4
 tag: "Internship"
 year: "2025"
 role: "Robotics Engineering Intern"
-tools: "Onshape, KiCad, Python, C++"
-skills: "CAD, ECAD, GD&T, FDM 3D Printing, CNC Milling DFM, Hot Air Reflow, Soldering, PCB Turnkey Procurement, 2D Engineering Drawings"
+tools:
+  - "Onshape"
+  - "KiCad"
+  - "Python"
+  - "C++"
+skills:
+  - "CAD"
+  - "ECAD"
+  - "GD&T"
+  - "FDM 3D Printing"
+  - "CNC Milling DFM"
+  - "Hot Air Reflow"
+  - "Soldering"
+  - "PCB Turnkey Procurement"
+  - "2D Engineering Drawings"
 links:
   - label: "website"
     url: "https://www.tri.global/"

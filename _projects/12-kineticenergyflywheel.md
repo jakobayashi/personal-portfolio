@@ -5,7 +5,14 @@ tag: "Mechanical"
 year: "2023"
 role:
 tools:
-skills: "CAD, CAM, CNC Milling, CNC Turning, FDM 3D Printing, FEA, Soldering"
+skills:
+  - "CAD"
+  - "CAM"
+  - "CNC Milling"
+  - "CNC Turning"
+  - "FDM 3D Printing"
+  - "FEA"
+  - "Soldering"
 links:
   - label:
     url:

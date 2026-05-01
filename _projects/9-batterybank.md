@@ -5,7 +5,11 @@ tag: "Electrical"
 year: "2022"
 role:
 tools:
-skills: "CAD, FDM 3D Printing, Soldering, Spot Welding"
+skills:
+  - "CAD"
+  - "FDM 3D Printing"
+  - "Soldering"
+  - "Spot Welding"
 links:
   - label:
     url:

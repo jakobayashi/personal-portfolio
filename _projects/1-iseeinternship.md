@@ -4,8 +4,16 @@ size: 4
 tag: "Internship"
 year: "2023"
 role: "Mechanical Engineering Intern"
-tools: "SOLIDWORKS, Altium CoDesigner, MATLAB Simulink"
-skills: "CAD, GD&T, FDM 3D Printing, Soldering, 2D Engineering Drawings"
+tools:
+  - "SOLIDWORKS"
+  - "Altium CoDesigner"
+  - "MATLAB Simulink"
+skills:
+  - "CAD"
+  - "GD&T"
+  - "FDM 3D Printing"
+  - "Soldering"
+  - "2D Engineering Drawings"
 links:
   - label: "website"
     url: "https://www.isee.ai/"
@@ -13,10 +21,10 @@ thumbnail: "/assets/photos/iseeinternship/header.jpg"
 sections:
   - type: image
     srcs:
-      - "/assets/photos/iseeinternship/header.jpg"
+      - "/assets/photos/iseeinternship/about.jpg"
     tiling: single
     title: "Internship Overview"
-    text: "During my 3 -month internship at ISEE, I had the opportunity to work on the mechanical team as a mechanical engineering intern. I was tasked with many projects including creating a test bench, transmission panel enclosure, lidar covers, and much more."
+    text: "During my 3-month internship at ISEE, I had the opportunity to work on the mechanical team as a mechanical engineering intern. I was tasked with many projects including creating a test bench, transmission panel enclosure, lidar covers, and much more."
 
   - type: image
     srcs:

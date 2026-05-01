@@ -5,7 +5,10 @@ tag: "PCB"
 year: "2022"
 role:
 tools:
-skills: "ECAD, Hot Air Reflow, PCB Turnkey Procurement"
+skills:
+  - "ECAD"
+  - "Hot Air Reflow"
+  - "PCB Turnkey Procurement"
 links:
   - label:
     url:

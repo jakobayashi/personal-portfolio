@@ -226,6 +226,12 @@ body.home .site-header {
   cursor: pointer;
 }
 
+.sidebar-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 /* ── Project page ── */
 body.project-page {
   background: #fafaf7;
@@ -262,7 +268,7 @@ body.project-page {
   font-size: 12px;
   color: #5c5c5c;
   letter-spacing: 1.5px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .project-title {
@@ -348,27 +354,27 @@ body.project-page {
 .project-body {}
 
 .project-section {
-  margin-bottom: 16px;
+  margin-bottom: 72px;
 }
 
 .section-title {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.3px;
-  margin: 0 0 14px;
+  margin: 0 0 16px;
 }
 
 .section-text {
   color: #3a3a3a;
   font-size: 16px;
   line-height: 1.8;
-  margin: 0 0 28px;
-  max-width: 680px;
+  max-width: 684px;
 }
 
 .section-media {
   display: grid;
-  gap: 10px;
+  gap: 8px;
+  margin: 0 0 14px;
 }
 
 .section-media img,
@@ -382,10 +388,10 @@ body.project-page {
 }
 
 .tiling-single    { height: 500px; }
-.tiling-vertical  { grid-template-rows: 1fr 1fr; height: 560px; }
-.tiling-horizontal{ grid-template-columns: 1fr 1fr; height: 360px; }
-.tiling-quadrant  { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; height: 520px; }
-.tiling-triple    { grid-template-columns: 1fr 1fr 1fr; height: 360px; }
+.tiling-vertical  { grid-template-rows: 1fr 1fr; height: 500px; }
+.tiling-horizontal{ grid-template-columns: 1fr 1fr; height: 500px; }
+.tiling-quadrant  { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; height: 500px; }
+.tiling-triple    { grid-template-columns: 1fr 1fr 1fr; height: 500px; }
 
 .tiling-side {
   grid-template-columns: 1fr 2fr;

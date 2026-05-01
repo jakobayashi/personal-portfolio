@@ -4,8 +4,14 @@ size: 2
 tag: "Mechanical"
 year: "2026"
 role:
-tools: "SOLIDWORKS"
-skills: "CAD, DFMA, FDM 3D Printing, FEA, GD&T"
+tools:
+  - "SOLIDWORKS"
+skills:
+  - "CAD"
+  - "DFMA"
+  - "FDM 3D Printing"
+  - "FEA"
+  - "GD&T"
 links:
   - label: "website"
     url: "https://wp.wpi.edu/wpifsae/"

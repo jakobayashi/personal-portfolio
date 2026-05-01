@@ -5,7 +5,11 @@ tag: "CNC"
 year:
 role:
 tools:
-skills: "CAM, CNC Milling, CNC Turning, CNC Milling DFM"
+skills:
+  - "CAM"
+  - "CNC Milling"
+  - "CNC Turning"
+  - "CNC Milling DFM"
 links:
   - label:
     url:
@@ -13,8 +17,33 @@ thumbnail: "/assets/photos/miscmachiningprojects/header.jpg"
 sections:
   - type: image
     srcs:
-      - "/assets/photos/miscmachiningprojects/header.jpg"
+      - "/assets/photos/miscmachiningprojects/ringboxcam.png"
+      - "/assets/photos/miscmachiningprojects/ringbox1.png"
+      - "/assets/photos/miscmachiningprojects/ringbox2.png"
+    tiling: triple
+    title: "Ring Box"
+    text: ""
+  
+  - type: image
+    srcs:
+      - "/assets/photos/miscmachiningprojects/flywheel.png"
     tiling: single
-    title: "WIP"
+    title: "Flywheel"
+    text: ""
+  
+  - type: image
+    srcs:
+      - "/assets/photos/miscmachiningprojects/pocketrails1.png"
+      - "/assets/photos/miscmachiningprojects/pocketrails2.jpg"
+    tiling: vertical
+    title: "Pocketed Rails"
+    text: ""
+  
+  - type: image
+    srcs:
+      - "/assets/photos/miscmachiningprojects/wireedmcam.png"
+      - "/assets/photos/miscmachiningprojects/wireedm.jpg"
+    tiling: horizontal
+    title: "Wire EDM"
     text: ""
 ---

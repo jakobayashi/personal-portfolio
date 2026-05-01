@@ -9,7 +9,7 @@ layout: default
     {% if page.year or page.tag %}
       <div class="project-meta">
         {%- if page.year %}{{ page.year }}{% endif -%}
-        {%- if page.year and page.tag %} · {% endif -%}
+        {%- if page.year and page.tag %} | {% endif -%}
         {%- if page.tag %}{{ page.tag }}{% endif -%}
       </div>
     {% endif %}
@@ -49,13 +49,21 @@ layout: default
       {% if page.skills %}
         <div class="sidebar-item">
           <div class="sidebar-label">Skills</div>
-          <div class="sidebar-value">{{ page.skills }}</div>
+          <div class="sidebar-value sidebar-skills">
+            {% for skill in page.skills %}
+              <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
       {% endif %}
       {% if page.tools %}
         <div class="sidebar-item">
           <div class="sidebar-label">Tools</div>
-          <div class="sidebar-value">{{ page.tools }}</div>
+          <div class="sidebar-value sidebar-skills">
+            {% for tool in page.tools %}
+              <span class="skill-tag">{{ tool }}</span>
+            {% endfor %}
+          </div>
         </div>
       {% endif %}
       {% assign has_links = false %}
@@ -83,9 +91,6 @@ layout: default
           {% if section.title %}
             <h2 class="section-title">{{ section.title }}</h2>
           {% endif %}
-          {% if section.text %}
-            <p class="section-text">{{ section.text }}</p>
-          {% endif %}
           {% if section.type == 'image' or section.type == 'video' %}
             <div class="section-media tiling-{{ section.tiling | default: 'single' }}">
               {% if section.type == 'video' %}
@@ -101,6 +106,9 @@ layout: default
                 {% endif %}
               {% endif %}
             </div>
+          {% endif %}
+          {% if section.text %}
+            <p class="section-text">{{ section.text }}</p>
           {% endif %}
         </section>
       {% endfor %}
