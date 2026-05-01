@@ -161,6 +161,38 @@ body.home .site-header {
   margin-top: 5px;
 }
 
+/* Center crosshair for framing reference */
+.tile-crosshair {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.debug .tile-crosshair::before,
+.debug .tile-crosshair::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 0, 0, 0.6);
+}
+
+.debug .tile-crosshair::before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.debug .tile-crosshair::after {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
 /* Accent ring appears on hover */
 .tile-ring {
   position: absolute;
@@ -269,12 +301,13 @@ body.project-page {
   color: #5c5c5c;
   letter-spacing: 1.5px;
   margin-bottom: 24px;
+  line-height: 1;
 }
 
 .project-title {
   font-size: clamp(28px, 4vw, 60px);
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1;
   letter-spacing: -1.2px;
   margin: 0 0 24px;
   max-width: 840px;

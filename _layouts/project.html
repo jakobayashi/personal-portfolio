@@ -21,7 +21,7 @@ layout: default
 
   {% if page.thumbnail %}
     <div class="project-thumbnail">
-      <img src="{{ page.thumbnail }}" alt="{{ page.title }}">
+      <img src="{{ page.thumbnail[0].srcs }}" alt="{{ page.title }}">
     </div>
   {% endif %}
 

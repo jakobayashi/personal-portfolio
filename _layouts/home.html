@@ -1,7 +1,10 @@
 ---
 layout: default
 ---
-<script>document.body.classList.add('home');</script>
+<script>
+  document.body.classList.add('home');
+  if (new URLSearchParams(location.search).has('debug')) document.body.classList.add('debug');
+</script>
 
 <main class="home-main">
   <div id="bento-grid" class="bento-grid">
@@ -10,7 +13,10 @@ layout: default
          href="{{ project.url | relative_url }}"
          data-size="{{ project.size | default: 1 }}">
         {% if project.thumbnail %}
-          <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+          {% assign thumb = project.thumbnail[0] %}
+          {% assign adj = thumb.adjustments %}
+          <img src="{{ thumb.srcs }}" alt="{{ project.title }}"
+               data-adj="{{ adj[0] }},{{ adj[1] }}">
         {% endif %}
         <div class="tile-overlay"></div>
         <div class="tile-info">
@@ -24,6 +30,7 @@ layout: default
           {% endif %}
         </div>
         <div class="tile-ring"></div>
+        <div class="tile-crosshair"></div>
       </a>
     {% endfor %}
   </div>
