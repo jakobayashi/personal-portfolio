@@ -25,12 +25,12 @@ links:
   - label: "promotional video"
     url: "https://www.youtube.com/watch?v=SEIukShccic"
 thumbnail:
-  - srcs: "/assets/photos/triinternship/header.jpg"
+  - srcs: "/assets/media/triinternship/header.jpg"
     adjustments: [0, 0]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/triinternship/one.jpg"
+      - "/assets/media/triinternship/one.jpg"
     tiling: single
     title: "WIP"
     text: ""

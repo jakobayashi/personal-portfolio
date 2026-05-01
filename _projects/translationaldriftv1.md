@@ -13,34 +13,34 @@ links:
   - label:
     url:
 thumbnail:
-  - srcs: "/assets/photos/translationaldriftv1/header.jpg"
-    adjustments: [2.4, 1]
+  - srcs: "/assets/media/translationaldriftv1/header.jpg"
+    adjustments: [2.4, 4.4]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/translationaldriftv1/cad1.jpg"
-      - "/assets/photos/translationaldriftv1/cad2.jpg"
+      - "/assets/media/translationaldriftv1/cad1.jpg"
+      - "/assets/media/translationaldriftv1/cad2.jpg"
     tiling: horizontal
     title: "CAD"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/translationaldriftv1/electronics.jpg"
+      - "/assets/media/translationaldriftv1/electronics.jpg"
     tiling: single
     title: "Electronics"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/translationaldriftv1/final.JPG"
+      - "/assets/media/translationaldriftv1/final.JPG"
     tiling: single
     title: "Final Product"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/translationaldriftv1/competition.jpg"
+      - "/assets/media/translationaldriftv1/competition.jpg"
     tiling: single
     title: "Competition"
     text: ""

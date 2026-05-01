@@ -15,29 +15,29 @@ links:
   - label:
     url:
 thumbnail:
-  - srcs: "/assets/photos/onewheelv1/header.png"
+  - srcs: "/assets/media/onewheelv1/header.png"
     adjustments: [0, -3.9]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/onewheelv1/battery1.jpg"
-      - "/assets/photos/onewheelv1/battery2.jpg"
-      - "/assets/photos/onewheelv1/bottom.jpg"
+      - "/assets/media/onewheelv1/battery1.jpg"
+      - "/assets/media/onewheelv1/battery2.jpg"
+      - "/assets/media/onewheelv1/bottom.jpg"
     tiling: side
     title: "Custom Battery Solution"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/onewheelv1/prototyping.jpg"
-      - "/assets/photos/onewheelv1/iteration.png"
+      - "/assets/media/onewheelv1/prototyping.jpg"
+      - "/assets/media/onewheelv1/iteration.png"
     tiling: vertical
     title: "Design Iteration"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/onewheelv1/motor.jpg"
+      - "/assets/media/onewheelv1/motor.jpg"
     tiling: single
     title: "Powertrain"
     text: ""

@@ -191,10 +191,11 @@
     const tile = item.tile;
     const img = tile.querySelector('img');
     const [adjX0, adjY0] = (img?.dataset.adj || '0,0').split(',').map(Number);
-    const tw = tile.offsetWidth, th = tile.offsetHeight;
 
     tile.style.gridArea = `${slot.row + 1} / ${slot.col + 1} / ${slot.row + 1 + slot.rh} / ${slot.col + 1 + slot.cw}`;
     tile.style.visibility = 'visible';
+
+    const tw = tile.offsetWidth, th = tile.offsetHeight;
 
     if (img) {
       if (img.complete && img.naturalWidth) {

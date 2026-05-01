@@ -1,4 +1,5 @@
 @media (max-width: 640px) {
+  /* ── Home page ── */
   body.home {
     height: auto;
     overflow: auto;
@@ -33,32 +34,140 @@
     display: none;
   }
 
-  .project-thumbnail {
-    height: 250px;
+  /* ── Project page ── */
+  body.project-page .project {
+    padding: 0 22px;
   }
 
-  .project {
-    padding: 0 16px;
+  body.project-page .project-meta {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    margin: 0px 0 16px;
+    color: #6c6c6c;
   }
 
-  .project-columns {
+  body.project-page .project-title {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.3px;
+    margin: 0 0 24px;
+    max-width: none;
+  }
+
+  body.project-page .project-summary {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+    max-width: none;
+  }
+
+  body.project-page .project-thumbnail {
     display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    margin: 0;
+    border-radius: 6px;
   }
 
-  .project-sidebar {
-    display: none;
+  body.project-page .project-columns {
+    display: block;
+    gap: 0;
   }
 
-  .project-thumbnail {
-    display: none;
+  body.project-page .project-sidebar {
+    display: block;
+    position: static;
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 1.5;
+    top: auto;
   }
 
-  .tiling-single,
-  .tiling-vertical,
-  .tiling-horizontal,
-  .tiling-quadrant,
-  .tiling-triple,
-  .tiling-side {
+  body.project-page .sidebar-item {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  body.project-page .sidebar-item:first-child {
+    margin-top: 0;
+  }
+
+  body.project-page .sidebar-label {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+  }
+
+  body.project-page .sidebar-value {
+    color: #2a2a2a;
+    font-size: 12px;
+  }
+
+  body.project-page .sidebar-skills {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  body.project-page .skill-tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    background: #ececea;
+    border: 1px solid #e0ddd5;
+    border-radius: 5px;
+    color: #3a3a3a;
+    letter-spacing: 0.2px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  body.project-page .sidebar-link {
+    font-size: 12px;
+    text-underline-offset: 3px;
+  }
+
+  body.project-page .project-body {
+    margin-top: 36px;
+  }
+
+  body.project-page .project-section {
+    margin-bottom: 36px;
+  }
+
+  body.project-page .section-title {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    margin: 0 0 16px;
+  }
+
+  body.project-page .section-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 14px;
+    color: #2a2a2a;
+    max-width: none;
+  }
+
+  body.project-page .section-media {
+    gap: 6px;
+    margin: 0;
+  }
+
+  body.project-page .section-media img,
+  body.project-page .section-media video {
+    border-radius: 4px;
+  }
+
+  body.project-page .tiling-single,
+  body.project-page .tiling-vertical,
+  body.project-page .tiling-horizontal,
+  body.project-page .tiling-quadrant,
+  body.project-page .tiling-triple,
+  body.project-page .tiling-side {
     height: 250px;
   }
 }

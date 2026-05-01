@@ -13,26 +13,26 @@ links:
   - label:
     url:
 thumbnail:
-  - srcs: "/assets/photos/telemetrypcb/header.jpg"
+  - srcs: "/assets/media/telemetrypcb/header.jpg"
     adjustments: [2.6, 0.7]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/telemetrypcb/layout.jpg"
+      - "/assets/media/telemetrypcb/layout.jpg"
     tiling: single
     title: "PCB Layout"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/telemetrypcb/procurement.jpg"
+      - "/assets/media/telemetrypcb/procurement.jpg"
     tiling: single
     title: "Procurement"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/telemetrypcb/assembly.jpeg"
+      - "/assets/media/telemetrypcb/assembly.jpeg"
     tiling: single
     title: "Assembly"
     text: ""

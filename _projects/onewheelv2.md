@@ -23,37 +23,44 @@ links:
   - label: "design files"
     url: "https://github.com/jakobayashi/onewheel"
 thumbnail:
-  - srcs: "/assets/photos/onewheelv2/header.jpeg"
+  - srcs: "/assets/media/onewheelv2/header.jpeg"
     adjustments: [0.6, 3.4]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/onewheelv2/cadtiles.png"
+      - "/assets/media/onewheelv2/cadtiles.png"
     tiling: single
     title: "CAD Progress"
     text: ""
 
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/onewheelv2/cad.png"
+      - "/assets/media/onewheelv2/cad.png"
     tiling: single
     title: "Completed CAD"
     text: ""
 
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/onewheelv2/machining1.jpeg"
-      - "/assets/photos/onewheelv2/machining2.jpeg"
+      - "/assets/media/onewheelv2/machining1.jpeg"
+      - "/assets/media/onewheelv2/machining2.jpeg"
     tiling: horizontal
     title: "Manufacturing"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/onewheelv2/spotwelds1.jpg"
-      - "/assets/photos/onewheelv2/spotwelds2.jpg"
-      - "/assets/photos/onewheelv2/total.JPG"
+      - "/assets/media/onewheelv2/spotwelds1.jpg"
+      - "/assets/media/onewheelv2/spotwelds2.jpg"
+      - "/assets/media/onewheelv2/total.JPG"
     tiling: side
     title: "Custom Modular Battery"
+    text: ""
+  
+  - type: media
+    srcs:
+      - "/assets/media/onewheelv2/riding.mp4"
+    tiling: single
+    title: "Riding Around"
     text: ""
 ---

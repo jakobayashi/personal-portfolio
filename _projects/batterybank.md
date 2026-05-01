@@ -14,19 +14,19 @@ links:
   - label:
     url:
 thumbnail:
-  - srcs: "/assets/photos/batterybank/header.jpg"
+  - srcs: "/assets/media/batterybank/header.jpg"
     adjustments: [8.2, -8.2]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/batterybank/electrical.jpg"
+      - "/assets/media/batterybank/electrical.jpg"
     tiling: single
     title: "Electrical Integration"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/batterybank/unplugged.jpg"
+      - "/assets/media/batterybank/unplugged.jpg"
     tiling: single
     title: "Final Product"
     text: ""

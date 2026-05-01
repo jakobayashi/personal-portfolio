@@ -14,37 +14,37 @@ links:
   - label:
     url:
 thumbnail:
-  - srcs: "/assets/photos/miscmachiningprojects/header.jpg"
+  - srcs: "/assets/media/miscmachiningprojects/header.jpg"
     adjustments: [0.7, -6.8]
 sections:
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/miscmachiningprojects/ringboxcam.png"
-      - "/assets/photos/miscmachiningprojects/ringbox1.png"
-      - "/assets/photos/miscmachiningprojects/ringbox2.png"
+      - "/assets/media/miscmachiningprojects/ringboxcam.png"
+      - "/assets/media/miscmachiningprojects/ringbox1.png"
+      - "/assets/media/miscmachiningprojects/ringbox2.png"
     tiling: triple
     title: "Ring Box"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/miscmachiningprojects/flywheel.png"
+      - "/assets/media/miscmachiningprojects/flywheel.png"
     tiling: single
     title: "Flywheel"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/miscmachiningprojects/pocketrails1.png"
-      - "/assets/photos/miscmachiningprojects/pocketrails2.jpg"
+      - "/assets/media/miscmachiningprojects/pocketrails1.png"
+      - "/assets/media/miscmachiningprojects/pocketrails2.jpg"
     tiling: vertical
     title: "Pocketed Rails"
     text: ""
   
-  - type: image
+  - type: media
     srcs:
-      - "/assets/photos/miscmachiningprojects/wireedmcam.png"
-      - "/assets/photos/miscmachiningprojects/wireedm.jpg"
+      - "/assets/media/miscmachiningprojects/wireedmcam.png"
+      - "/assets/media/miscmachiningprojects/wireedm.jpg"
     tiling: horizontal
     title: "Wire EDM"
     text: ""

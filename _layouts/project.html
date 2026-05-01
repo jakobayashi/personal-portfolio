@@ -91,20 +91,20 @@ layout: default
           {% if section.title %}
             <h2 class="section-title">{{ section.title }}</h2>
           {% endif %}
-          {% if section.type == 'image' or section.type == 'video' %}
+          {% if section.type == 'media' %}
             <div class="section-media tiling-{{ section.tiling | default: 'single' }}">
-              {% if section.type == 'video' %}
-                <video controls>
-                  <source src="{{ section.src }}">
-                </video>
-              {% else %}
-                {% for src in section.srcs %}
+              {% for src in section.srcs %}
+                {% assign ext = src | split: '.' | last | downcase %}
+                {% if ext == 'mp4' or ext == 'mov' or ext == 'webm' or ext == 'ogg' %}
+                  {% assign mime = ext %}
+                  {% if ext == 'mov' %}{% assign mime = 'quicktime' %}{% endif %}
+                  <video autoplay loop muted playsinline>
+                    <source src="{{ src }}" type="video/{{ mime }}">
+                  </video>
+                {% else %}
                   <img src="{{ src }}" alt="{{ section.title | default: page.title }}">
-                {% endfor %}
-                {% if section.src %}
-                  <img src="{{ section.src }}" alt="{{ section.title | default: page.title }}">
                 {% endif %}
-              {% endif %}
+              {% endfor %}
             </div>
           {% endif %}
           {% if section.text %}
